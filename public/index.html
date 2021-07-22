@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="messages"></div>
+
+    <form action="" id="messageForm">
+        <input type="text" name="message" id="message">
+        <input type="submit" id="submit">
+    </form>
+    <br>
+    <button id="location">share location</button>
+
+    <script id="message-template" type="text/html">
+        <div>
+            <p>{{message}}</p>
+        </div>
+    </script>
+
+    <script id="location-template" type="text/html">
+        <div>
+            <a href="{{url}}">Link</a>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"
+        integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"
+        integrity="sha512-+KQDdWwfzb3UZ0sEt1Op66MoQ9NKs6bE02+NpPnsQxZ6ylUP3Fd8L3yf1CsYPD2vndRIbOCzWk2RUfOJ9bsOcA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
