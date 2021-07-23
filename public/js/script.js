@@ -11,16 +11,16 @@ const locationTemplate = document.getElementById('location-template').innerHTML
 
 socket.on('Message', (message) => {
 
-    const html = Mustache.render(messageTemplate, { message })
+    const html = Mustache.render(messageTemplate, { message: message.text, messageTime: moment(message.currTime).format('h:mm a') })
     $messages.insertAdjacentHTML('beforeend', html)
 
     console.log(message)
 })
 
-socket.on('locationMessage', (url) => {
-    const html = Mustache.render(locationTemplate, { url })
+socket.on('locationMessage', (message) => {
+    const html = Mustache.render(locationTemplate, { url: message.text, locationMessageTime: moment(message.currTime).format('h:mm a') })
     $messages.insertAdjacentHTML('beforeend', html)
-    console.log(url)
+    console.log(message)
 })
 
 
